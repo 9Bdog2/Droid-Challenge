@@ -8,26 +8,31 @@ const BookListings = () => {
   useEffect(() => {
     fetch("https://api.itbook.store/1.0/search/mongodb")
       .then((res) => res.json())
-      .then((data) => setBooks(data.books))
-      .then(console.log(books));
+      .then((data) => setBooks(data.books));
     setLoading(false);
   }, []);
 
   return (
-    <div>
-      <Spinner animation="border" role="status">
-        <span className="sr-only">Loading...</span>
-      </Spinner>
-      <Card style={{ width: "18rem" }}>
-        <Card.Img variant="top" src="holder.js/100px180" />
-        <Card.Body>
-          <Card.Title>Card Title</Card.Title>
-          <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </Card.Text>
-        </Card.Body>
-      </Card>
+    <div className="container">
+      <div className="row">
+        {isLoading ? (
+          <Spinner animation="border" role="status">
+            <span className="sr-only">Loading...</span>
+          </Spinner>
+        ) : (
+          books.map((book, i) => (
+            <div className="col-md-3 col-sm-3 col-lg-3 col-xl-3  ">
+              <Card style={{ width: "15rem" }} key={i}>
+                <Card.Img variant="top" src={book.image} />
+                <Card.Body>
+                  <Card.Title className="text">{book.title}</Card.Title>
+                  <Card.Text className="text">{book.subtitle}</Card.Text>
+                </Card.Body>
+              </Card>
+            </div>
+          ))
+        )}
+      </div>
     </div>
   );
 };
