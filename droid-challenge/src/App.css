@@ -1,0 +1,50 @@
+.App {
+  text-align: center;
+  background-color: aliceblue;
+  height: 100vh;
+}
+/* -----------------Main Page----------------- */
+
+.main_menu {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  border-bottom: 1px solid #a3a3a3;
+  height: 10vh;
+  font-style: normal;
+  font-size: larger;
+}
+
+.main_menu_logo {
+  align-items: flex-start;
+  height: 9vh;
+  font-size: 4vh;
+}
+
+.search {
+  margin: 0px 20px;
+}
+/* -----------------Main Page----------------- */
+
+/* -----------------About----------------- */
+.about_col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 12% 20px;
+}
+
+.about_content {
+  background-color: rgb(255, 255, 255);
+  width: 500px;
+}
+
+/* -----------------About----------------- */
+/* -----------------Contact----------------- */
+
+
+
+
+
+
+/* -----------------Contact----------------- */
