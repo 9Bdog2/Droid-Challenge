@@ -15,7 +15,7 @@ class Home extends Component {
           </Nav.Item>
           <Nav.Item>
             <Link to="/">
-              <div className="nav-link">Home</div>
+              <div className="nav-link ">Home</div>
             </Link>
           </Nav.Item>
           <Nav.Item>
