@@ -1,9 +1,13 @@
 import { Card } from "react-bootstrap";
 import { BiExitFullscreen } from "react-icons/bi";
 import { useCart } from "react-use-cart";
+import uniqid from "uniqid";
 
 const BookDetail = ({ book, setFocusedItem }) => {
   const { addItem } = useCart();
+
+  book.id = uniqid();
+  console.log(book);
 
   return (
     <div className="container-fluid">
