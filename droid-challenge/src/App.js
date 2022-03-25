@@ -22,26 +22,26 @@ function App() {
             element={
               <>
                 <Home />
-                <div className="container">
-                  <div className="row">
-                    <div className="col-md-1 col-sm-1 col-lg-1 col-xl-1 ">
-                      <Cart />
-                    </div>
-                    <div className="col-md-11 col-sm-11 col-lg-11 col-xl-11  ">
-                      {focusedItem ? (
-                        <BookDetail
-                          book={activeBook}
-                          setFocusedItem={setFocusedItem}
-                        />
-                      ) : (
-                        <BookListings
-                          setFocusedItem={setFocusedItem}
-                          setActiveBook={setActiveBook}
-                        />
-                      )}
-                    </div>
+                {/* <div className="container"> */}
+                <div className="row">
+                  <div className="col-md-2 col-sm-2 col-lg-2 col-xl-2 jusitfy-content-center mt-5">
+                    <Cart />
+                  </div>
+                  <div className="col-md-10 col-sm-10 col-lg-10 col-xl-10  mt-5">
+                    {focusedItem ? (
+                      <BookDetail
+                        book={activeBook}
+                        setFocusedItem={setFocusedItem}
+                      />
+                    ) : (
+                      <BookListings
+                        setFocusedItem={setFocusedItem}
+                        setActiveBook={setActiveBook}
+                      />
+                    )}
                   </div>
                 </div>
+                {/* </div> */}
               </>
             }
           />

@@ -1,22 +1,37 @@
 import { BiArchiveOut } from "react-icons/bi";
+import { AiOutlineShoppingCart } from "react-icons/ai";
+import { Row } from "react-bootstrap";
 
 const Cart = () => {
   return (
-    <div className="container cart">
+    <div className="container-fluid cart">
       <div className="row">
-        <div className="col-md-12 col-sm-12 col-lg-12 col-xl-12  justify-content-center">
-          <BiArchiveOut /> Contact
+        <div className="col-md-12 col-sm-12 col-lg-12 col-xl-12 ">
+          <div className="justify-content-start d-flex mb-2">
+            <p className="pt-2 ">
+              <span className="mr-2 ">
+                <BiArchiveOut />
+              </span>
+              <span>Contact</span>
+            </p>
+          </div>
+          <div className="justify-content-start d-flex mb-2">
+            <p className=" cart_contact_content">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Null
+              auctor.
+            </p>
+          </div>
         </div>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Null auctor,
-          urna eu tempor congue, nisi nisi efficitur nisi, eget efficitur nisl
-          nisi eget nisl. Pellentesque euismod, urna eu tempor congue, nisi nisi
-          efficitur nisi, eget efficitur nisl nisi eget nisl.
-        </p>
       </div>
       <div className="row">
-        <div className="col-md-12 col-sm-12 col-lg-12 col-xl-12  justify-content-center">
-          Cart
+        <div className="col-md-12 col-sm-12 col-lg-12 col-xl-12 mb-2 ">
+          <div className="justify-content-start d-flex mb-2">
+            <span className="mr-2 ">
+              <AiOutlineShoppingCart />
+            </span>
+            <span>Cart</span>
+          </div>
+          <div className="cart_area  justify-content-center">Cart is Empty</div>
         </div>
       </div>
     </div>
