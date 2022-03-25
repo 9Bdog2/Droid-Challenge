@@ -7,13 +7,14 @@ const BookDetail = ({ book, setFocusedItem }) => {
   const { addItem } = useCart();
 
   book.id = uniqid();
+  book.price = book.price.replace(/[^\d.-]/g, "");
   console.log(book);
 
   return (
     <div className="container-fluid">
       <div className="row">
         <div className="col-md-12 col-sm-12 col-lg-12 col-xl-12 d-flex justify-content-center ">
-          <Card style={{ width: "40vw" }}>
+          <Card style={{ width: "25vw" }}>
             <Card.Img variant="top" src={book.image} />
             <Card.Body>
               <div className="d-flex ">

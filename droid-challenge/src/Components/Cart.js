@@ -7,7 +7,7 @@ const Cart = ({ book }) => {
   const { isEmpty, totalUniqueItems, totalItems, cartTotal, emptyCart } =
     useCart();
 
-  console.log(cartTotal);
+  /* console.log(cartTotal); */
 
   if (isEmpty)
     return (
@@ -77,7 +77,7 @@ const Cart = ({ book }) => {
             </div>
             <div className="cart_area  justify-content-center">
               <div className="row">
-                {/*  <span>Total:${cartTotal}</span> */}
+                <span>Total:${cartTotal}</span>
                 <span>Price:{book.price}</span>
                 <span>{book.title}</span>
               </div>
