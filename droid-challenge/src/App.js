@@ -8,6 +8,7 @@ import BookListings from "./Components/BookListings.js";
 import BookDetail from "./Components/BookDetail.js";
 import Cart from "./Components/Cart.js";
 import { useState } from "react";
+import { CartProvider } from "react-use-cart";
 
 function App() {
   const [focusedItem, setFocusedItem] = useState(false);
@@ -22,26 +23,27 @@ function App() {
             element={
               <>
                 <Home />
-                {/* <div className="container"> */}
-                <div className="row">
-                  <div className="col-md-2 col-sm-2 col-lg-2 col-xl-2 jusitfy-content-center mt-5">
-                    <Cart />
+                <CartProvider>
+                  <div className="row">
+                    <div className="col-md-2 col-sm-2 col-lg-2 col-xl-2 jusitfy-content-center mt-5">
+                      <Cart book={activeBook}/>
+                    </div>
+                    <div className="col-md-10 col-sm-10 col-lg-10 col-xl-10  mt-5">
+                      {focusedItem ? (
+                        <BookDetail
+                          book={activeBook}
+                          setFocusedItem={setFocusedItem}
+                          
+                        />
+                      ) : (
+                        <BookListings
+                          setFocusedItem={setFocusedItem}
+                          setActiveBook={setActiveBook}
+                        />
+                      )}
+                    </div>
                   </div>
-                  <div className="col-md-10 col-sm-10 col-lg-10 col-xl-10  mt-5">
-                    {focusedItem ? (
-                      <BookDetail
-                        book={activeBook}
-                        setFocusedItem={setFocusedItem}
-                      />
-                    ) : (
-                      <BookListings
-                        setFocusedItem={setFocusedItem}
-                        setActiveBook={setActiveBook}
-                      />
-                    )}
-                  </div>
-                </div>
-                {/* </div> */}
+                </CartProvider>
               </>
             }
           />
@@ -64,15 +66,6 @@ function App() {
               </>
             }
           />
-          {/* <Route
-            path="/products/:productId"
-            element={
-              <>
-                <Home />
-                <BookDetail />
-              </>
-            }
-          /> */}
         </Routes>
       </div>
     </BrowserRouter>
